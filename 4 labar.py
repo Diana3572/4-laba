@@ -20,15 +20,14 @@ def laba42():
 
 #4.3
 def laba43():
-    user_input = input("Введите дату месяц и год (в формате ДД.ММ.ГГГГ): ")
-    if is_magic_date(user_input):
-        print("Это магическая дата!")
+    a=input("введите дату через точку(ДД.ММ.ГГГГ): ")
+    d=int(a[0]+a[1])
+    m=int(a[3]+a[4])
+    y=int(a[8]+a[9])
+    if d*m==y:
+        print("True")
     else:
-        print("Это не магическая дата.")
-
-if name == "__laba43__":
-    laba43()
-
+        print("False")
 #4.4
 def laba44(ticket_number):
     half_length = len(ticket_number) // 2 #выч половину номера, чтобы разделить на 2
