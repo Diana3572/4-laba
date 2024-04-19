@@ -6,8 +6,6 @@ def laba41(x):
         else:
              print(f"{x} не делится на 3.")
 
-laba41(x)
-
 #4.2
 def laba42():
     try:
