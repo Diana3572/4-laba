@@ -1,10 +1,11 @@
 #4.1
 def laba41(x):
-    if x % 3 == 0:
-         print(f"{x} делится на 3.")
-    else:
-         print(f"{x} не делится на 3.")
-x = int(input("введие число"))
+    x = int(input("введие число"))
+        if x % 3 == 0:
+             print(f"{x} делится на 3.")
+        else:
+             print(f"{x} не делится на 3.")
+
 laba41(x)
 
 #4.2
@@ -28,15 +29,22 @@ def laba43():
         print("True")
     else:
         print("False")
-#4.4
-def laba44(ticket_number):
-    half_length = len(ticket_number) // 2 #выч половину номера, чтобы разделить на 2
-    first_half = sum(map(int, ticket_number[:half_length])) # склад цифры первой и второй половины
-    second_half = sum(map(int, ticket_number[half_length:]))
-    return first_half == second_half
 
-ticket_number = input("Введите номер билета: ")
-if laba44(ticket_number):
-    print("Этот билет - счастливый!")
-else:
-    print("Этот билет не является счастливым.")
+#4.4
+def laba44():
+    a = input("Введите номер билета: ")
+    if a.isdigit():
+        if len(a) % 2 == 0:
+            b = len(a) // 2
+            f = a[:b]
+            s = a[b:]
+
+            if sum(map(int, f)) == sum(map(int, s)):
+                print("это счастливый билет")
+            else:
+                print("это несчастливый билет")
+        else:
+            print("введите чётное кол-во цифр")
+    else:
+        print("введите цифры")
+laba41
