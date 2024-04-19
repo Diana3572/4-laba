@@ -11,8 +11,8 @@ laba41(x)
 def laba42():
     try:
         a = int(input("введите число: "))
-        tmp = 100 / a
-        print(tmp)
+        b = 100 / a
+        print(b)
     except ValueError:
         print("Error! " + str("введите число"))
     except ZeroDivisionError:
