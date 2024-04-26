@@ -1,18 +1,17 @@
 #4.1
 def laba41(x):
-    if x % 3 == 0:
-         print(f"{x} делится на 3.")
-    else:
-         print(f"{x} не делится на 3.")
-x = int(input("введие число"))
-laba41(x)
+    x = int(input("введие число"))
+        if x % 3 == 0:
+             print(f"{x} делится на 3.")
+        else:
+             print(f"{x} не делится на 3.")
 
 #4.2
 def laba42():
     try:
         a = int(input("введите число: "))
-        tmp = 100 / a
-        print(tmp)
+        b = 100 / a
+        print(b)
     except ValueError:
         print("Error! " + str("введите число"))
     except ZeroDivisionError:
@@ -20,24 +19,30 @@ def laba42():
 
 #4.3
 def laba43():
-    user_input = input("Введите дату месяц и год (в формате ДД.ММ.ГГГГ): ")
-    if is_magic_date(user_input):
-        print("Это магическая дата!")
+    a=input("введите дату через точку(ДД.ММ.ГГГГ): ")
+    d=int(a[0]+a[1])
+    m=int(a[3]+a[4])
+    y=int(a[8]+a[9])
+    if d*m==y:
+        print("True")
     else:
-        print("Это не магическая дата.")
-
-if name == "__laba43__":
-    laba43()
+        print("False")
 
 #4.4
-def laba44(ticket_number):
-    half_length = len(ticket_number) // 2 #выч половину номера, чтобы разделить на 2
-    first_half = sum(map(int, ticket_number[:half_length])) # склад цифры первой и второй половины
-    second_half = sum(map(int, ticket_number[half_length:]))
-    return first_half == second_half
+def laba44():
+    a = input("Введите номер билета: ")
+    if a.isdigit():
+        if len(a) % 2 == 0:
+            b = len(a) // 2
+            f = a[:b]
+            s = a[b:]
 
-ticket_number = input("Введите номер билета: ")
-if laba44(ticket_number):
-    print("Этот билет - счастливый!")
-else:
-    print("Этот билет не является счастливым.")
+            if sum(map(int, f)) == sum(map(int, s)):
+                print("это счастливый билет")
+            else:
+                print("это несчастливый билет")
+        else:
+            print("введите чётное кол-во цифр")
+    else:
+        print("введите цифры")
+
